@@ -1,0 +1,289 @@
+{
+    "Framework": "FedRAMP-Low-Revision-4",
+    "Version": "",
+    "Provider": "GCP",
+    "Description": "FedRAMP Low Revision 4 compliance for GCP, adapted from AWS. Only checks present in the CIS 3.0 GCP benchmark are used.",
+    "Requirements": [
+        {
+            "Id": "ac-2",
+            "Name": "Account Management (AC-2)",
+            "Description": "Manage system accounts, group memberships, privileges, workflow, notifications, deactivations, and authorizations.",
+            "Attributes": [
+                {
+                    "ItemId": "ac-2",
+                    "Section": "Access Control (AC)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "iam_organization_essential_contacts_configured",
+                "iam_sa_no_user_managed_keys",
+                "iam_no_service_roles_at_project_level",
+                "kms_key_rotation_enabled",
+                "apikeys_key_exists",
+                "apikeys_api_restrictions_configured",
+                "compute_network_not_legacy",
+                "compute_subnet_flow_logs_enabled",
+                "compute_instance_confidential_computing_enabled",
+                "iam_role_kms_enforce_separation_of_duties",
+                "apikeys_key_rotated_in_90_days",
+                "compute_network_default_in_use",
+                "iam_sa_no_administrative_privileges"
+            ]
+        },
+        {
+            "Id": "ac-3",
+            "Name": "Account Management (AC-3)",
+            "Description": "The information system enforces approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
+            "Attributes": [
+                {
+                    "ItemId": "ac-3",
+                    "Section": "Access Control (AC)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "iam_sa_no_user_managed_keys",
+                "iam_organization_essential_contacts_configured",
+                "apikeys_key_rotated_in_90_days",
+                "apikeys_key_exists"
+            ]
+        },
+        {
+            "Id": "ac-17",
+            "Name": "Remote Access (AC-17)",
+            "Description": "Authorize remote access systems prior to connection. Enforce remote connection requirements to information systems.",
+            "Attributes": [
+                {
+                    "ItemId": "ac-17",
+                    "Section": "Access Control (AC)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "cloudstorage_bucket_public_access"
+            ]
+        },
+        {
+            "Id": "au-2",
+            "Name": "Audit Events (AU-2)",
+            "Description": "The organization: a. Determines that the information system is capable of auditing the following events: [Assignment: organization-defined auditable events]; b. Coordinates the security audit function with other organizational entities requiring audit- related information to enhance mutual support and to help guide the selection of auditable events; c. Provides a rationale for why the auditable events are deemed to be adequate support after- the-fact investigations of security incidents",
+            "Attributes": [
+                {
+                    "ItemId": "au-2",
+                    "Section": "Audit and Accountability (AU)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "compute_network_not_legacy",
+                "compute_subnet_flow_logs_enabled",
+                "compute_network_default_in_use",
+                "compute_firewall_rdp_access_from_the_internet_allowed"
+            ]
+        },
+        {
+            "Id": "au-9",
+            "Name": "Protection of Audit Information (AU-9)",
+            "Description": "The information system protects audit information and audit tools from unauthorized access, modification, and deletion.",
+            "Attributes": [
+                {
+                    "ItemId": "au-9",
+                    "Section": "Audit and Accountability (AU)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "dns_rsasha1_in_use_to_zone_sign_in_dnssec",
+                "compute_network_not_legacy"
+            ]
+        },
+        {
+            "Id": "au-11",
+            "Name": "Audit Record Retention (AU-11)",
+            "Description": "The organization retains audit records for at least 90 days to provide support for after-the-fact investigations of security incidents and to meet regulatory and organizational information retention requirements.",
+            "Attributes": [
+                {
+                    "ItemId": "au-11",
+                    "Section": "Audit and Accountability (AU)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": []
+        },
+        {
+            "Id": "ca-7",
+            "Name": "Continuous Monitoring (CA-7)",
+            "Description": "Continuously monitor configuration management processes. Determine security impact, environment and operational risks.",
+            "Attributes": [
+                {
+                    "ItemId": "ca-7",
+                    "Section": "Security Assessment And Authorization (CA)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "compute_instance_confidential_computing_enabled",
+                "compute_subnet_flow_logs_enabled",
+                "compute_network_default_in_use"
+            ]
+        },
+        {
+            "Id": "cm-2",
+            "Name": "Baseline Configuration (CM-2)",
+            "Description": "The organization develops, documents, and maintains under configuration control, a current baseline configuration of the information system.",
+            "Attributes": [
+                {
+                    "ItemId": "cm-2",
+                    "Section": "Configuration Management (CM)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "cloudstorage_bucket_public_access"
+            ]
+        },
+        {
+            "Id": "cm-8",
+            "Name": "Information System Component Inventory (CM-8)",
+            "Description": "The organization develops and documents an inventory of information system components that accurately reflects the current information system, includes all components within the authorization boundary of the information system, is at the level of granularity deemed necessary for tracking and reporting and reviews and updates the information system component inventory.",
+            "Attributes": [
+                {
+                    "ItemId": "cm-8",
+                    "Section": "Configuration Management (CM)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": []
+        },
+        {
+            "Id": "cp-9",
+            "Name": "Information System Backup (CP-9)",
+            "Description": "The organization conducts backups of user-level information, system-level information and information system documentation including security-related documentation contained in the information system and protects the confidentiality, integrity, and availability of backup information at storage locations.",
+            "Attributes": [
+                {
+                    "ItemId": "cp-9",
+                    "Section": "Contingency Planning (CP)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": []
+        },
+        {
+            "Id": "cp-10",
+            "Name": "Information System Recovery And Reconstitution (CP-10)",
+            "Description": "The organization provides for the recovery and reconstitution of the information system to a known state after a disruption, compromise, or failure.",
+            "Attributes": [
+                {
+                    "ItemId": "cp-10",
+                    "Section": "Contingency Planning (CP)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": []
+        },
+        {
+            "Id": "ia-2",
+            "Name": "Identification and Authentication (Organizational users) (IA-2)",
+            "Description": "The information system uniquely identifies and authenticates organizational users (or processes acting on behalf of organizational users).",
+            "Attributes": [
+                {
+                    "ItemId": "ia-2",
+                    "Section": "Identification and Authentication (IA)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "iam_sa_no_user_managed_keys",
+                "kms_key_rotation_enabled",
+                "iam_role_kms_enforce_separation_of_duties",
+                "iam_no_service_roles_at_project_level",
+                "iam_sa_no_administrative_privileges"
+            ]
+        },
+        {
+            "Id": "ir-4",
+            "Name": "Incident Handling (IR-4)",
+            "Description": "The organization implements an incident handling capability for security incidents that includes preparation, detection and analysis, containment, eradication, and recovery, coordinates incident handling activities with contingency planning activities and incorporates lessons learned from ongoing incident handling activities into incident response procedures, training, and testing, and implements the resulting changes accordingly.",
+            "Attributes": [
+                {
+                    "ItemId": "ir-4",
+                    "Section": "Incident Response (IR)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "compute_instance_confidential_computing_enabled"
+            ]
+        },
+        {
+            "Id": "sa-3",
+            "Name": "System Development Life Cycle (SA-3)",
+            "Description": "The organization manages the information system using organization-defined system development life cycle, defines and documents information security roles and responsibilities throughout the system development life cycle, identifies individuals having information security roles and responsibilities and integrates the organizational information security risk management process into system development life cycle activities.",
+            "Attributes": [
+                {
+                    "ItemId": "sa-3",
+                    "Section": "System and Services Acquisition (SA)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": []
+        },
+        {
+            "Id": "sc-5",
+            "Name": "Denial Of Service Protection (SC-5)",
+            "Description": "The information system protects against or limits the effects of the following types of denial of service attacks: [Assignment: organization-defined types of denial of service attacks or references to sources for such information] by employing [Assignment: organization-defined security safeguards].",
+            "Attributes": [
+                {
+                    "ItemId": "sc-5",
+                    "Section": "System and Communications Protection (SC)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": []
+        },
+        {
+            "Id": "sc-7",
+            "Name": "Boundary Protection (SC-7)",
+            "Description": "The information system: a. Monitors and controls communications at the external boundary of the system and at key internal boundaries within the system; b. Implements subnetworks for publicly accessible system components that are [Selection: physically; logically] separated from internal organizational networks; and c. Connects to external networks or information systems only through managed interfaces consisting of boundary protection devices arranged in accordance with an organizational security architecture.",
+            "Attributes": [
+                {
+                    "ItemId": "sc-7",
+                    "Section": "System and Communications Protection (SC)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "cloudstorage_bucket_public_access"
+            ]
+        },
+        {
+            "Id": "sc-12",
+            "Name": "Cryptographic Key Establishment And Management (SC-12)",
+            "Description": "The organization establishes and manages cryptographic keys for required cryptography employed within the information system in accordance with [Assignment: organization-defined requirements for key generation, distribution, storage, access, and destruction].",
+            "Attributes": [
+                {
+                    "ItemId": "sc-12",
+                    "Section": "System and Communications Protection (SC)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": [
+                "compute_firewall_ssh_access_from_the_internet_allowed"
+            ]
+        },
+        {
+            "Id": "sc-13",
+            "Name": "Use of Cryptography (SC-13)",
+            "Description": "The information system implements FIPS-validated or NSA-approved cryptography in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
+            "Attributes": [
+                {
+                    "ItemId": "sc-13",
+                    "Section": "System and Communications Protection (SC)",
+                    "Service": "gcp"
+                }
+            ],
+            "Checks": []
+        }
+    ]
+}
