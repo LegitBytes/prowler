@@ -1,0 +1,35 @@
+{
+    "Provider": "gcp",
+    "CheckID": "iam_user_mfa_enabled_console_access",
+    "CheckTitle": "Ensure MFA is enabled for all organizational users",
+    "CheckType": [
+        "Identity and Access Management"
+    ],
+    "ServiceName": "iam",
+    "SubServiceName": "user",
+    "ResourceIdTemplate": "",
+    "Severity": "high",
+    "ResourceType": "Organization",
+    "Description": "Ensure that multi-factor authentication (MFA) is enabled for all non-service (organizational) user accounts.",
+    "Risk": "Without MFA, compromised credentials can lead to unauthorized access to sensitive data.",
+    "RelatedUrl": "https://support.google.com/accounts/answer/185839",
+    "Remediation": {
+        "Code": {
+            "CLI": "Review your Google Workspace or Cloud Identity settings",
+            "Terraform": "",
+            "NativeIaC": "",
+            "Other": ""
+        },
+        "Recommendation": {
+            "Text": "Enable MFA for all non-service user accounts in Google Workspace or Cloud Identity.",
+            "Url": "https://support.google.com/accounts/answer/185839"
+        }
+    },
+    "Categories": [
+        "authentication",
+        "identity"
+    ],
+    "DependsOn": [],
+    "RelatedTo": [],
+    "Notes": "This check is manual because GCP does not directly expose MFA status via the Cloud IAM API. Verification should be done via the Google Admin Console."
+}

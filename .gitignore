@@ -61,3 +61,4 @@ node_modules
 
 # Persistent data
 _data/
+credentials-file-gcp*.json
