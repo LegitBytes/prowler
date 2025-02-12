@@ -1,0 +1,38 @@
+{
+    "Provider": "gcp",
+    "CheckID": "cloudstorage_bucket_log_retention_specific_days_enabled",
+    "CheckTitle": "Ensure Cloud Logging Buckets Have a Retention Period of at Least 90 Days",
+    "CheckType": [
+        "audit",
+        "logging",
+        "retention"
+    ],
+    "ServiceName": "logging",
+    "SubServiceName": "bucket",
+    "ResourceIdTemplate": "projects/{project_id}/locations/{location}/buckets/{bucket_name}",
+    "Severity": "high",
+    "ResourceType": "Bucket",
+    "Description": "Verify that each Cloud Logging bucket used for log exports has a retention policy configured with a retention period of at least 90 days.",
+    "Risk": "If audit logs are not retained for a sufficient duration, it may impede after-the-fact investigations of security incidents and result in non-compliance with regulatory requirements.",
+    "RelatedUrl": "https://cloud.google.com/logging/docs/export/configure#retention",
+    "Remediation": {
+        "Code": {
+            "CLI": "gcloud beta logging buckets update _Default --location=global --retention-days=90",
+            "Terraform": "",
+            "Other": "",
+            "NativeIaC": ""
+        },
+        "Recommendation": {
+            "Text": "Configure your Cloud Logging buckets to have a retention period of at least 90 days. Review your log buckets via the GCP Console or CLI and update the retention policy if it is below the required threshold.",
+            "Url": "https://cloud.google.com/logging/docs/export/configure#retention"
+        }
+    },
+    "Categories": [
+        "audit",
+        "logging",
+        "retention"
+    ],
+    "DependsOn": [],
+    "RelatedTo": [],
+    "Notes": "Ensure that the retention policy is applied to all log buckets used for exporting audit logs. Consider enabling Bucket Lock to prevent changes during the retention period."
+}
