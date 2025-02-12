@@ -1,0 +1,36 @@
+{
+    "Provider": "gcp",
+    "CheckID": "compute_instance_osconfig_enabled",
+    "CheckTitle": "Ensure Compute Engine instances have OS Config enabled",
+    "CheckType": [
+        "configuration",
+        "compliance"
+    ],
+    "ServiceName": "compute",
+    "SubServiceName": "instance",
+    "ResourceIdTemplate": "",
+    "Severity": "medium",
+    "ResourceType": "Compute",
+    "Description": "Ensure that all Compute Engine instances are managed using OS Config for centralized patching and configuration management.",
+    "Risk": "Instances without OS Config enabled may not receive timely security patches or configuration updates, increasing the risk of non-compliance and vulnerabilities.",
+    "RelatedUrl": "https://cloud.google.com/compute/docs/os-config-management",
+    "Remediation": {
+        "Code": {
+            "CLI": "gcloud compute instances add-metadata INSTANCE_NAME --metadata enable-osconfig=true",
+            "Terraform": "",
+            "NativeIaC": "",
+            "Other": ""
+        },
+        "Recommendation": {
+            "Text": "Enable OS Config on Compute Engine instances by setting the 'enable-osconfig' metadata key to 'true'.",
+            "Url": "https://cloud.google.com/compute/docs/os-config-management"
+        }
+    },
+    "Categories": [
+        "configuration",
+        "compliance"
+    ],
+    "DependsOn": [],
+    "RelatedTo": [],
+    "Notes": "This check verifies that each Compute Engine instance has the 'enable-osconfig' metadata flag set to 'true'."
+}

@@ -1,0 +1,17 @@
+Control ac-2 is missing 13 checks in GCP.
+Control ac-3 is missing 16 checks in GCP.
+Control ac-17 is missing 20 checks in GCP.
+Control au-2 is missing 7 checks in GCP.
+Control au-9 is missing 2 checks in GCP.
+Control ca-7 is missing 8 checks in GCP.
+Control cm-2 is missing 20 checks in GCP.
+Control cm-8 is missing 4 checks in GCP.
+Control cp-9 is missing 7 checks in GCP.
+Control cp-10 is missing 9 checks in GCP.
+Control ia-2 is missing 1 checks in GCP.
+Control ir-4 is missing 6 checks in GCP.
+Control sa-3 is missing 1 checks in GCP.
+Control sc-5 is missing 8 checks in GCP.
+Control sc-7 is missing 20 checks in GCP.
+Control sc-12 is missing 1 checks in GCP.
+Control sc-13 is missing 4 checks in GCP.

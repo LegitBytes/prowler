@@ -109,7 +109,9 @@
                     "Service": "gcp"
                 }
             ],
-            "Checks": []
+            "Checks": [
+                "cloudstorage_bucket_log_retention_specific_days_enabled"
+            ]
         },
         {
             "Id": "ca-7",
@@ -227,7 +229,9 @@
                     "Service": "gcp"
                 }
             ],
-            "Checks": []
+            "Checks": [
+                "compute_instance_onconfig_enabled"
+            ]
         },
         {
             "Id": "sc-5",
