@@ -10,7 +10,6 @@ Control cp-9 is missing 7 checks in GCP.
 Control cp-10 is missing 9 checks in GCP.
 Control ia-2 is missing 1 checks in GCP.
 Control ir-4 is missing 6 checks in GCP.
-Control sa-3 is missing 1 checks in GCP.
 Control sc-5 is missing 8 checks in GCP.
 Control sc-7 is missing 20 checks in GCP.
 Control sc-12 is missing 1 checks in GCP.
