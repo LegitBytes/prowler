@@ -9,7 +9,7 @@
     ],
     "ServiceName": "logging",
     "SubServiceName": "bucket",
-    "ResourceIdTemplate": "projects/{project_id}/locations/{location}/buckets/{bucket_name}",
+    "ResourceIdTemplate": "",
     "Severity": "high",
     "ResourceType": "Bucket",
     "Description": "Verify that each Cloud Logging bucket used for log exports has a retention policy configured with a retention period of at least 90 days.",
