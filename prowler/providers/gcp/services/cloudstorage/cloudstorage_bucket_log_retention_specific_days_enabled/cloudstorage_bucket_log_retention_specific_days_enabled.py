@@ -3,7 +3,6 @@
 from prowler.lib.check.models import Check, Check_Report_GCP
 from prowler.providers.gcp.services.logging.logging_client import logging_client
 from prowler.providers.gcp.services.cloudstorage.cloudstorage_client import cloudstorage_client
-
 class cloudstorage_bucket_log_retention_specific_days_enabled(Check):
     """
     Custom Check: Ensure that Cloud Logging buckets have a retention period
