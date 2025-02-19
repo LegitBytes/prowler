@@ -40,7 +40,12 @@ pypi-build: ## Build package
 pypi-upload: ## Upload package
 	python3 -m twine upload --repository pypi dist/*
 
+##@ Custom / temporary - by shivansh
+run-gcp-fedramp-low: ## Runs the prowler with gcp provider and fedramp_low_revision_$_gcp as dfault compliance with ./credentials-file-gcp.json
+	python3 ./prowler.py gcp --credentials-file ./credentials-file-gcp.json --compliance fedramp_low_revision_4_gcp
 
+run-check-gcp: ## Run a single check for gcp ( to test newly created custom checks )
+	python3 ./prowler.py gcp --credentials-file ./credentials-file-gcp.json --checks $(CHECK)
 ##@ Help
 help:     ## Show this help.
 	@echo "Prowler Makefile"
