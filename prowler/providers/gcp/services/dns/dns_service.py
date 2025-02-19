@@ -24,10 +24,13 @@ class DNS(GCPService):
                             ManagedZone(
                                 name=managed_zone["name"],
                                 id=managed_zone["id"],
-                                dnssec=managed_zone.get("dnssecConfig", {})["state"] == "on",
-                                key_specs=managed_zone.get("dnssecConfig", {})[
-                                    "defaultKeySpecs"
-                                ],
+                                dnssec=managed_zone.get("dnssecConfig", {}).get(
+                                    "state", ""
+                                )
+                                == "on",
+                                key_specs=managed_zone.get("dnssecConfig", {}).get(
+                                    "defaultKeySpecs", []
+                                ),
                                 project_id=project_id,
                             )
                         )
