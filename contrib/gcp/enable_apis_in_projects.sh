@@ -9,6 +9,7 @@ PROJECT_IDS=(
 )
 
 # List of Prowler APIs to enable
+
 APIS=(
     "apikeys.googleapis.com"
     "artifactregistry.googleapis.com"

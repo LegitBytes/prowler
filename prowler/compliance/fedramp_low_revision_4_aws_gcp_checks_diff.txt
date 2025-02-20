@@ -14,5 +14,5 @@ Control ir-4 is missing 6 checks in GCP.
 Control sa-3 is missing 1 checks in GCP. //Complete
 Control sc-5 is missing 8 checks in GCP.
 Control sc-7 is missing 20 checks in GCP.
-Control sc-12 is missing 1 checks in GCP.
+Control sc-12 is missing 1 checks in GCP. //Complete
 Control sc-13 is missing 4 checks in GCP.

@@ -1,0 +1,37 @@
+{
+    "Provider": "gcp",
+    "CheckID": "certificatemanager_certificates_expiration_check",
+    "CheckTitle": "Ensure GCP Certificate Manager certificates have sufficient expiration periods",
+    "CheckType": [
+        "audit",
+        "cryptography",
+        "certificates"
+    ],
+    "ServiceName": "certificatemanager",
+    "SubServiceName": "certificate",
+    "ResourceIdTemplate": "",
+    "Severity": "high",
+    "ResourceType": "GCP::CertificateManager::Certificate",
+    "Description": "Verify that all certificates managed by GCP Certificate Manager have an expiration date that is not too near, ensuring compliance with retention policies. A threshold of at least 7 days before expiry is required.",
+    "Risk": "Certificates nearing expiration or expired may lead to service disruption and non-compliance with security policies.",
+    "RelatedUrl": "https://cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest",
+    "Remediation": {
+        "Code": {
+            "CLI": "gcloud certificate-manager certificates update CERTIFICATE_ID --expiration-time=<NEW_EXPIRATION_TIME>",
+            "Terraform": "",
+            "NativeIaC": "",
+            "Other": ""
+        },
+        "Recommendation": {
+            "Text": "Update your certificates to ensure they have a sufficient validity period remaining. Replace or renew certificates that are close to expiring.",
+            "Url": "https://cloud.google.com/certificate-manager/docs/renew-certificates"
+        }
+    },
+    "Categories": [
+        "cryptography",
+        "certificates"
+    ],
+    "DependsOn": [],
+    "RelatedTo": [],
+    "Notes": "This check requires that certificate expiration times are provided in ISO 8601 format."
+}
