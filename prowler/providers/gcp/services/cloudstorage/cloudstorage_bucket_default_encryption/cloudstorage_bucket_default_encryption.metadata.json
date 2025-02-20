@@ -1,0 +1,38 @@
+{
+    "Provider": "gcp",
+    "CheckID": "cloudstorage_bucket_default_encryption",
+    "CheckTitle": "Ensure Cloud Storage buckets have default encryption configured properly",
+    "CheckType": [
+        "audit",
+        "encryption",
+        "cloudstorage"
+    ],
+    "ServiceName": "storage",
+    "SubServiceName": "bucket",
+    "ResourceIdTemplate": "",
+    "Severity": "medium",
+    "ResourceType": "Bucket",
+    "Description": "Verify that Cloud Storage buckets are encrypted using the default Google-managed encryption or a properly configured customer-managed key. If an encryption configuration is present, it must include 'defaultKmsKeyName'.",
+    "Risk": "Buckets without proper encryption may lead to data exposure and non-compliance with security policies.",
+    "RelatedUrl": "https://cloud.google.com/storage/docs/encryption",
+    "Remediation": {
+        "Code": {
+            "CLI": "gcloud storage buckets update BUCKET_NAME --default-kms-key-name=KEY_NAME",
+            "Terraform": "",
+            "NativeIaC": "",
+            "Other": ""
+        },
+        "Recommendation": {
+            "Text": "Ensure that if a bucket has an encryption configuration, the 'defaultKmsKeyName' is set to a valid customer-managed key. If no encryption configuration is present, the bucket is using default Google-managed encryption, which is acceptable.",
+            "Url": "https://cloud.google.com/storage/docs/encryption"
+        }
+    },
+    "Categories": [
+        "encryption",
+        "cloudstorage",
+        "audit"
+    ],
+    "DependsOn": [],
+    "RelatedTo": [],
+    "Notes": "If no encryption configuration is present, the bucket uses default Google-managed encryption, which meets the requirement."
+}

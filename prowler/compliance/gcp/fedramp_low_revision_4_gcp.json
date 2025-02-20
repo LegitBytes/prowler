@@ -288,7 +288,10 @@
                     "Service": "gcp"
                 }
             ],
-            "Checks": []
+            "Checks": [
+                "cloudstorage_bucket_default_encryption"
+                
+            ]
         }
     ]
 }
